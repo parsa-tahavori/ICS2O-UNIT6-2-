@@ -16,8 +16,18 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function displays an alert.
+ * this function cookies
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function myCookieClicked() {
+  localStorage.clicks++
+  document.getElementById("points").innerHTML = localStorage.clicks
+}
+
+function updateCookieCount() {
+  if (localStorage.clicks) {
+    localStorage.clicks = Number(localStorage.clicks)
+  } else {
+    localStorage.clicks = 0
+  }
+  document.getElementById("points").innerHTML = localStorage.clicks
 }
